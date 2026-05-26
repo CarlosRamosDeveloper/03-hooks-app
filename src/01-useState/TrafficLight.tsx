@@ -6,10 +6,12 @@ const colors = {
   green: 'bg-green-500 animate-pulse',
 };
 
-export const TrafficLight = () => {
-  const [light, setLight] = useState('red');
+type TrafficLightColor = keyof typeof colors;
 
-  const handleColorChange = (color: string) => {
+export const TrafficLight = () => {
+  const [light, setLight] = useState<TrafficLightColor>('red');
+
+  const handleColorChange = (color: TrafficLightColor) => {
     setLight((prev) => {
       return color;
     });
