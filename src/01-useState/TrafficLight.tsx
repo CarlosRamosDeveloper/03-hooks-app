@@ -13,6 +13,7 @@ export const TrafficLight = () => {
 
   const handleColorChange = (color: TrafficLightColor) => {
     setLight((prev) => {
+      console.log(prev);
       return color;
     });
   };
