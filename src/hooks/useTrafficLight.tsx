@@ -43,8 +43,11 @@ export const useTrafficLight = () => {
   }, [countdown, light]);
 
   return {
-    colors: colors,
-    light: light,
     countdown: countdown,
+
+    countDownPercentage: (countdown / 5) * 100,
+    greenLight: light === 'green' ? colors[light] : 'bg-gray-500',
+    redLight: light === 'red' ? colors[light] : 'bg-gray-500',
+    yellowLight: light === 'yellow' ? colors[light] : 'bg-gray-500',
   };
 };
