@@ -1,4 +1,5 @@
 import { useTrafficLight } from '@/hooks/useTrafficLight';
+import { TrafficLight } from './TrafficLight';
 
 export const TrafficLightWithHook = () => {
   const { countdown, countDownPercentage, greenLight, redLight, yellowLight } =
@@ -15,9 +16,9 @@ export const TrafficLightWithHook = () => {
             style={{ width: `${countDownPercentage}%` }}
           ></div>
         </div>
-        <div className={`w-32 h-32 ${redLight} rounded-full`}></div>
-        <div className={`w-32 h-32 ${yellowLight} rounded-full`}></div>
-        <div className={`w-32 h-32 ${greenLight} rounded-full`}></div>
+        <TrafficLight color={redLight} />
+        <TrafficLight color={yellowLight} />
+        <TrafficLight color={greenLight} />
       </div>
     </div>
   );
