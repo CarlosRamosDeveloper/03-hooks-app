@@ -1,12 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { MemoHook } from './06-memos/MemoHook';
-
 import './index.css';
+import { MemoCounter } from './06-memos/MemoCounter';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <MemoHook />
+    <MemoCounter />
   </StrictMode>,
 );
