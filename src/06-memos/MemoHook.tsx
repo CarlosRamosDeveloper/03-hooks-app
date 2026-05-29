@@ -15,8 +15,12 @@ export const MemoHook = () => {
 
       <MyTitle title={title} />
       <MySubtitle subtitle={subtitle} />
-      <CustomButton text="Cambiar Título" />
-      <CustomButton text="Cambiar Subtítulo" />
+
+      <CustomButton text="Cambiar Título" onClick={() => setTitle('Hello')} />
+      <CustomButton
+        text="Cambiar Subtítulo"
+        onClick={() => setSubtitle('World')}
+      />
     </div>
   );
 };

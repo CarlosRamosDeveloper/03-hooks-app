@@ -1,10 +1,14 @@
 interface Props {
   text: string;
+  onClick: () => void;
 }
 
-export const CustomButton = ({ text }: Props) => {
+export const CustomButton = ({ text, onClick }: Props) => {
   return (
-    <button className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">
+    <button
+      onClick={onClick}
+      className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
+    >
       {text}
     </button>
   );
