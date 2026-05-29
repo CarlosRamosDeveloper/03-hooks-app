@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MySubtitle, MyTitle } from './ui';
+import { CustomButton } from './ui/CustomButton';
 
 const titleInitialValue = 'Mi título';
 const subtitleInitialValue = 'Mi subtítulo';
@@ -14,16 +15,8 @@ export const MemoHook = () => {
 
       <MyTitle title={title} />
       <MySubtitle subtitle={subtitle} />
-
-      <button className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">
-        {' '}
-        Cambiar Título{' '}
-      </button>
-
-      <button className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">
-        {' '}
-        Cambiar Subtítulo
-      </button>
+      <CustomButton text="Cambiar Título" />
+      <CustomButton text="Cambiar Subtítulo" />
     </div>
   );
 };
