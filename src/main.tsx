@@ -3,12 +3,12 @@ import { createRoot } from 'react-dom/client';
 
 import './index.css';
 
-import { InstagromApp } from './07-useOptimistic/InstagromApp';
 import { Toaster } from 'sonner';
+import { ClientInformation } from './08-use-suspense/ClientInformation';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Toaster />
-    <InstagromApp />
+    <ClientInformation />
   </StrictMode>,
 );
