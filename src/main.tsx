@@ -2,10 +2,11 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import './index.css';
-import { MemoCounter } from './06-memos/MemoCounter';
+
+import { InstagromApp } from './07-useOptimistic/InstagromApp';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <MemoCounter />
+    <InstagromApp />
   </StrictMode>,
 );
