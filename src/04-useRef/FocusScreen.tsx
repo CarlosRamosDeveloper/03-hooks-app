@@ -1,3 +1,4 @@
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 import { useRef } from 'react';
 
 export const FocusScreen = () => {
@@ -24,6 +25,7 @@ export const FocusScreen = () => {
       >
         Set Focus
       </button>
+      <BackToMainPageButton />
     </div>
   );
 };

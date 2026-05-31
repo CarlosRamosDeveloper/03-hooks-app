@@ -1,5 +1,6 @@
 import { use, type Usable } from 'react';
 import { type User } from './api/get-user-action';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 
 interface Props {
   getUser: Usable<User>;
@@ -14,6 +15,7 @@ export const ClientInformation = ({ getUser }: Props) => {
       </h2>
       <p className="text-white text-2xl">{user.location}</p>
       <p className="text-white text-xl">{user.role}</p>
+      <BackToMainPageButton />
     </div>
   );
 };

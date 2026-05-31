@@ -1,3 +1,4 @@
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 import { useOptimistic, useState, useTransition } from 'react';
 
 import { toast } from 'sonner';
@@ -109,6 +110,7 @@ export const InstagromApp = () => {
           Enviar
         </button>
       </form>
+      <BackToMainPageButton />
     </div>
   );
 };

@@ -1,12 +1,14 @@
 import React, { useEffect, useReducer } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
+
 import { SkipForward, Play } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 import { getInitialState, wordsReducer } from './reducer/wordsReducer';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 
 export const ScrambleWords = () => {
   const [state, dispatch] = useReducer(wordsReducer, getInitialState());
@@ -185,7 +187,7 @@ export const ScrambleWords = () => {
             </div>
           </CardContent>
         </Card>
-
+        <BackToMainPageButton />
         {/* Footer */}
         <div className="text-center mt-6">
           <p className="text-sm text-gray-500">

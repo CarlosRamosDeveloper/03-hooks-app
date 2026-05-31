@@ -1,5 +1,6 @@
 import { useTrafficLight } from '@/hooks/useTrafficLight';
 import { TrafficLight } from './TrafficLight';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 
 export const TrafficLightWithHook = () => {
   const { countdown, countDownPercentage, greenLight, redLight, yellowLight } =
@@ -8,6 +9,7 @@ export const TrafficLightWithHook = () => {
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center p-4">
       <div className="flex flex-col items-center space-y-8">
+        <BackToMainPageButton />
         <h1 className="text-white text-2xl">Semaforo con useEffect</h1>
         <h2 className="text-white text-xl">{countdown}</h2>
         <div className="w-64 bg-gray-700 rounded-full h-2">

@@ -1,6 +1,7 @@
 import { useCounter } from '@/hooks/useCounter';
 import { usePokemon } from '@/hooks/usePokemon';
 import { PokemonHeaderError } from './PokemonHeaderError';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 
 export const PokemonPage = () => {
   const { counter, decrementValue, incrementValue } = useCounter();
@@ -45,6 +46,7 @@ export const PokemonPage = () => {
           Siguiente
         </button>
       </div>
+      <BackToMainPageButton />
     </div>
   );
 };

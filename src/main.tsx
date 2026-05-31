@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 
 import { Toaster } from 'sonner';
-import { ProfessionalApp } from './09-useContext/ProfessionalApp';
+import { HooksApp } from './HooksApp';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')!).render(
     {/* <Suspense fallback={<LoadingComponent />}>
       <ClientInformation getUser={getUserAction(1000)} />
     </Suspense> */}
-    <ProfessionalApp />
+    {/* <ProfessionalApp /> */}
+    <HooksApp />
   </StrictMode>,
 );

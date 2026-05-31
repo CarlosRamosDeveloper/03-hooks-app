@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { MySubtitle, MyTitle } from './ui';
 import { CustomButton } from './ui/CustomButton';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 
 const titleInitialValue = 'Mi título';
 const subtitleInitialValue = 'Mi subtítulo';
@@ -25,6 +26,7 @@ export const MemoHook = () => {
         text="Cambiar Subtítulo"
         onClick={() => setSubtitle('World')}
       />
+      <BackToMainPageButton />
     </div>
   );
 };

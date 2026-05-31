@@ -1,7 +1,6 @@
+import { RouterProvider } from 'react-router';
+import { mainRouter } from './router/main.router';
+
 export const HooksApp = () => {
-  return (
-    <div className="bg-gradient">
-      <h1>Hola Mundo</h1>
-    </div>
-  );
+  return <RouterProvider router={mainRouter} />;
 };

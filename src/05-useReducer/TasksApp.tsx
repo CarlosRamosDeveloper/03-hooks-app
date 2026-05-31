@@ -3,10 +3,12 @@ import { useEffect, useReducer, useState } from 'react';
 import { Plus, Trash2, Check } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+
+import { getTasksInitialState, taskReducer } from './reducer/taskReducer';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { getTasksInitialState, taskReducer } from './reducer/taskReducer';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 
 export const TasksApp = () => {
   const [inputValue, setInputValue] = useState('');
@@ -42,6 +44,7 @@ export const TasksApp = () => {
     <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 p-4">
       <div className="mx-auto max-w-2xl">
         <div className="mb-8 text-center">
+          <BackToMainPageButton />
           <h1 className="text-4xl font-bold text-slate-800 mb-2">
             Lista de Tareas
           </h1>

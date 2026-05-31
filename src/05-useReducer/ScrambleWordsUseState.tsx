@@ -4,11 +4,12 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
+
 import { SkipForward, Play } from 'lucide-react';
 
 import confetti from 'canvas-confetti';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 
 const GAME_WORDS = [
   'REACT',
@@ -43,7 +44,7 @@ const scrambleWord = (word: string = '') => {
     .join('');
 };
 
-export const ScrambleWords = () => {
+export const ScrambleWordsUseState = () => {
   const [words, setWords] = useState(shuffleArray(GAME_WORDS));
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [scrambledWord, setScrambledWord] = useState(scrambleWord(currentWord));
