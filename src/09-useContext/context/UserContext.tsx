@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import type { User } from '../data/user.mock.data';
+import { users, type User } from '../data/user.mock.data';
 
 type AuthStatus = 'checking' | 'authenticated' | 'non-authenticated';
 
@@ -14,6 +14,7 @@ interface UserContextProps {
   logout: () => void;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const UserContext = createContext<UserContextProps>(
   {} as UserContextProps,
 );
@@ -23,12 +24,23 @@ export const UserContextProvider = ({ children }: Props) => {
   const [user, setUser] = useState<User | null>(null);
 
   const handleLogin = (userId: number): boolean => {
-    console.log(`User id: ${userId}`);
+    const user = users.find((user) => user.id === userId);
+
+    if (!user) {
+      console.log(`User ${userId} not found!`);
+      setUser(null);
+      setAuthStatus('non-authenticated');
+      return false;
+    }
+
+    setUser(user);
+    setAuthStatus('authenticated');
     return true;
   };
 
   const handleLogout = () => {
-    console.log('Logging out!');
+    setAuthStatus('non-authenticated');
+    setUser(null);
   };
 
   return (
