@@ -53,7 +53,9 @@ export const UserContextProvider = ({ children }: Props) => {
     if (storedUserId) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       handleLogin(+storedUserId);
+      return;
     }
+    handleLogout();
   }, []);
 
   return (
