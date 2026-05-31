@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router';
 
 export const ProfilePage = () => {
   return (
@@ -6,7 +7,9 @@ export const ProfilePage = () => {
       <h1 className="text-4xl">Perfil del usuario</h1>
       <hr />
       <pre className="my-4">{JSON.stringify({}, null, 2)}</pre>
-      <Button variant="destructive">Cerrar Sesión</Button>
+      <Link to="/">
+        <Button variant="destructive">Cerrar Sesión</Button>
+      </Link>
     </div>
   );
 };
