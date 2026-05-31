@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router';
 
 export const ProfilePage = () => {
-  const { user } = useContext(UserContext);
+  const { user, logout } = useContext(UserContext);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -12,7 +12,9 @@ export const ProfilePage = () => {
       <hr />
       <pre className="my-4">{JSON.stringify(user, null, 2)}</pre>
       <Link to="/">
-        <Button variant="destructive">Cerrar Sesión</Button>
+        <Button onClick={logout} variant="destructive">
+          Cerrar Sesión
+        </Button>
       </Link>
     </div>
   );

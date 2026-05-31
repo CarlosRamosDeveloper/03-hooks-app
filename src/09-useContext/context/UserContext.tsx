@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { users, type User } from '../data/user.mock.data';
 
 type AuthStatus = 'checking' | 'authenticated' | 'non-authenticated';
@@ -23,6 +23,8 @@ export const UserContextProvider = ({ children }: Props) => {
   const [authStatus, setAuthStatus] = useState<AuthStatus>('checking');
   const [user, setUser] = useState<User | null>(null);
 
+  const userIdKey = 'userId';
+
   const handleLogin = (userId: number): boolean => {
     const user = users.find((user) => user.id === userId);
 
@@ -35,13 +37,23 @@ export const UserContextProvider = ({ children }: Props) => {
 
     setUser(user);
     setAuthStatus('authenticated');
+    localStorage.setItem(userIdKey, userId.toString());
     return true;
   };
 
   const handleLogout = () => {
     setAuthStatus('non-authenticated');
     setUser(null);
+    localStorage.removeItem(userIdKey);
   };
+
+  useEffect(() => {
+    const storedUserId = localStorage.getItem(userIdKey);
+    if (storedUserId) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      handleLogin(+storedUserId);
+    }
+  }, []);
 
   return (
     <UserContext
