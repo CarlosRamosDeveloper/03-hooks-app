@@ -11,5 +11,5 @@ export const PrivateRoute = ({ element }: Props) => {
 
   if (authStatus === 'checking') return <div>Loading...</div>;
   if (authStatus === 'authenticated') return element;
-  return <Navigate to="/login" replace />;
+  return <Navigate to="/professional/login" replace />;
 };

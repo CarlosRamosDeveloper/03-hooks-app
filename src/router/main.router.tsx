@@ -8,9 +8,12 @@ import { InstagromApp } from '@/07-useOptimistic/InstagromApp';
 import { getUserAction } from '@/08-use-suspense/api/get-user-action';
 import { ClientInformation } from '@/08-use-suspense/ClientInformation';
 import { LoadingComponent } from '@/08-use-suspense/LoadingComponent';
+import { UserContextProvider } from '@/09-useContext/context/UserContext';
+import { AboutPage, LoginPage, ProfilePage } from '@/09-useContext/pages';
+import { PrivateRoute } from '@/09-useContext/router/PrivateRoute';
 import { MainPage } from '@/mainPage/MainPage';
 import { Suspense } from 'react';
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router';
 
 export const mainRouter = createBrowserRouter([
   {
@@ -56,7 +59,35 @@ export const mainRouter = createBrowserRouter([
     ),
   },
   {
+    path: '/professional',
+    element: (
+      <UserContextProvider>
+        <AboutPage />
+      </UserContextProvider>
+    ),
+  },
+  {
+    path: '/professional/profile',
+    element: (
+      <UserContextProvider>
+        <PrivateRoute element={<ProfilePage />} />
+      </UserContextProvider>
+    ),
+  },
+  {
+    path: '/professional/login',
+    element: (
+      <UserContextProvider>
+        <LoginPage />
+      </UserContextProvider>
+    ),
+  },
+  {
+    path: '/professional/*',
+    element: <Navigate to="/professional" />,
+  },
+  {
     path: '*',
-    element: <></>,
+    element: <Navigate to="/" />,
   },
 ]);

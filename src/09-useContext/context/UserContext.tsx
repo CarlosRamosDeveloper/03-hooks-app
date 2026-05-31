@@ -68,7 +68,7 @@ export const UserContextProvider = ({ children }: Props) => {
         logout: handleLogout,
       }}
     >
-      {children}
+      <div className="bg-gradient">{children}</div>
     </UserContext>
   );
 };

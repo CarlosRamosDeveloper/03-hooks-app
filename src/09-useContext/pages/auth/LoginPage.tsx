@@ -1,6 +1,7 @@
 import { UserContext } from '@/09-useContext/context/UserContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { toast } from 'sonner';
@@ -21,7 +22,7 @@ export const LoginPage = () => {
       return;
     }
 
-    navigation('/profile');
+    navigation('/professional/profile');
   };
 
   const handleOnChange = (
@@ -45,7 +46,7 @@ export const LoginPage = () => {
         <Button type="submit">Login</Button>
       </form>
 
-      <Link to="/">
+      <Link to="/professional">
         <Button variant="ghost">Volver a la página principal</Button>
       </Link>
     </div>

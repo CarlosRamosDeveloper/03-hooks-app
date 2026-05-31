@@ -30,11 +30,8 @@ export const MainPage = () => {
         <Link to="/client">
           <Button>Clientes</Button>
         </Link>
-        <Link to="/">
-          <Button>Template</Button>
-        </Link>
-        <Link to="/">
-          <Button>Template</Button>
+        <Link to="/professional">
+          <Button>App Login</Button>
         </Link>
       </div>
     </div>

@@ -11,7 +11,7 @@ export const ProfilePage = () => {
       <h1 className="text-4xl">Perfil del usuario</h1>
       <hr />
       <pre className="my-4">{JSON.stringify(user, null, 2)}</pre>
-      <Link to="/">
+      <Link to="/professional">
         <Button onClick={logout} variant="destructive">
           Cerrar Sesión
         </Button>

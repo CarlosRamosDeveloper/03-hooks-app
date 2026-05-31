@@ -1,4 +1,5 @@
 import { UserContext } from '@/09-useContext/context/UserContext';
+import { BackToMainPageButton } from '@/components/BackToMainPageButton';
 import { Button } from '@/components/ui/button';
 import { use } from 'react';
 import { Link } from 'react-router';
@@ -21,11 +22,15 @@ export const AboutPage = () => {
             Salir
           </Button>
         ) : (
-          <Link className="hover:text-blue-500 underline text-2xl" to="/login">
+          <Link
+            className="hover:text-blue-500 underline text-2xl"
+            to="/professional/login"
+          >
             Iniciar sesión
           </Link>
         )}
       </div>
+      <BackToMainPageButton />
     </div>
   );
 };
